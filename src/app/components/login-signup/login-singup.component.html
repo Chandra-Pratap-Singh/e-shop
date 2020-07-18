@@ -1,0 +1,13 @@
+<div class="login-singup-container">
+  <div
+    class="login-singup-inner-container d-flex justify-content-center align-items-center"
+  >
+    <div class="login-signup px-5 pb-5 pt-3 shadow bg-white">
+      <div class="switch row bg-light">
+        <div class="col-6 p-3 text-center switch-item pointer-cursor" [routerLink]="['/entry/login']" [routerLinkActive]="['bg-white','text-primary']">Login</div>
+        <div class="col-6 p-3 text-center switch-item pointer-cursor"  [routerLink]="['/entry/sign-up']" [routerLinkActive]="['bg-white','text-primary']">SignUp</div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
