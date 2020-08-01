@@ -11,6 +11,7 @@ import { StoreModule } from '@ngrx/store'
 
 import { loginSignupReducer } from './store/reducers/login-signup-reducer'
 import { AngularFontAwesomeModule } from 'angular-font-awesome'
+import { productsReducer } from './store/reducers/products.reducer';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome'
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      loginSignup: loginSignupReducer
+      loginSignup: loginSignupReducer,
+      products: productsReducer
     }),
     AngularFontAwesomeModule
   ],
