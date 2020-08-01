@@ -1,0 +1,21 @@
+.login-singup-container {
+  min-height: 100vh;
+  background-image: url(../../../assets/login-bg.jpg);
+  background-size: cover;
+  position: relative;
+  /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+}
+.login-singup-inner-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.login-signup {
+  width: 500px;
+  border-radius: 10px;
+}
+.switch-item:focus {
+  outline: none;
+  border: 0;
+}

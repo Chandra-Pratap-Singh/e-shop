@@ -1,0 +1,1 @@
+export const LOGIN_SINGUP_DISPLAY:string = 'LOGIN_SINGUP_DISPLAY'

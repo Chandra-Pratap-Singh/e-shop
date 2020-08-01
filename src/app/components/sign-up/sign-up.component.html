@@ -1,0 +1,25 @@
+<div class="sign-up">
+  <form>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" />
+      <small *ngIf="false" class="text-danger px-1">Error Message</small>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" class="form-control" />
+      <small *ngIf="false" class="text-danger px-1">Error Message</small>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" />
+      <small *ngIf="false" class="text-danger px-1">Error Message</small>
+    </div>
+    <div class="form-group">
+      <label>Confirm Password <fa [name]="confirmPasswordVisibleIcon" class="icon pointer-cursor" (click)="confirmPasswordVisibleIconToggle()"></fa></label>
+      <input [type]="confirmPasswordType" class="form-control" />
+      <small *ngIf="false" class="text-danger px-1">Error Message</small>
+    </div>
+    <button class="btn btn-primary">Sign Up</button>
+  </form>
+</div>
