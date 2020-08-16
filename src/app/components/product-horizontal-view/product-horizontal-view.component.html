@@ -1,0 +1,31 @@
+<div
+class="row mx-2 py-2 border-bottom"
+>
+<div class="col-2">
+  <img class="dish-image" [src]="product.img" />
+</div>
+<div class="col-8">
+  <strong>{{ product.name }}</strong
+  ><br />
+  <span class="text-muted">{{ product.description }}</span>
+</div>
+<div class="col-2">
+  <span>&#8377;{{ product.price * product.presentInCart }}</span
+  ><br />
+  <span>
+    <span
+      class="text-danger pointer-cursor"
+      (click)="add(product.productId, +product.presentInCart - 1)"
+    >
+      -
+    </span>
+    <span>{{ product.presentInCart }}</span>
+    <span
+      class="text-success pointer-cursor"
+      (click)="add(product.productId, +product.presentInCart + 1)"
+    >
+      +
+    </span></span
+  >
+</div>
+</div>

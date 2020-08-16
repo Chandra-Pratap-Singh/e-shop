@@ -1,0 +1,26 @@
+<div #cartDrpDown="ngbDropdown" ngbDropdown class="d-inline-block">
+  <div id="CartDropDown" ngbDropdownToggle>
+    <fa name="shopping-cart" class="nav-icons"></fa> &nbsp;
+    <span class="badge badge-success" *ngIf="(orderTotal | async) > 0"
+      >&#8377;{{ orderTotal | async }}</span
+    >
+  </div>
+  <div ngbDropdownMenu aria-labelledby="CartDropDown" class="cart-drop-down">
+    <div *ngFor="let product of cartProducts | async">
+      <app-product-horizontal-view [product]="product">
+      </app-product-horizontal-view>
+    </div>
+    <div class="row p-3">
+      <div class="col">Total: &#8377;{{ orderTotal | async }}</div>
+      <div class="col">
+        <button
+          class="btn btn-success w-100"
+          [routerLink]="['/checkout']"
+          (click)="$event.stopPropagation(); cartDrpDown.close()"
+        >
+          checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="row p-0 m-0" cdkDropListGroup>
+  <div
+    class="col status-column p-1 border bg-light"
+    *ngFor="let status of orders | keyvalue: returnZero"
+    cdkDropList
+    [cdkDropListData]="status.key"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <h6 class="py-1 text-center">
+      {{ status.key | uppercase }}
+    </h6>
+    <div *ngFor="let order of status.value">
+        <app-admin-active-order-card
+          [order]="order"
+          cdkDrag
+          [cdkDragData]="{ orderId: order.orderId, index: i }"
+        ></app-admin-active-order-card>
+    </div>
+  </div>
+</div>

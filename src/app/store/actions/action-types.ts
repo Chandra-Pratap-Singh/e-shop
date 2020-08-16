@@ -1,1 +1,3 @@
-export const LOGIN_SINGUP_DISPLAY:string = 'LOGIN_SINGUP_DISPLAY'
+export const LOGIN_SINGUP_DISPLAY:string = 'LOGIN_SINGUP_DISPLAY';
+export const ADD_TO_CART:string = 'ADD_TO_CART';
+export const UPDATE_ACTIVE_ADDRESS = 'UPDATE_ACTIVE_ADDRESS';

@@ -4,6 +4,7 @@ import { IproductState } from "src/app/store/reducers/products.reducer";
 import { ActivatedRoute } from "@angular/router";
 import { ProductsService } from "src/app/services/products.service";
 import Iproduct from "src/app/modals/interfaces/product.interface";
+import { AddToCart } from "src/app/store/actions/products.actions";
 
 @Component({
   selector: "app-products",
@@ -21,12 +22,17 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(
-      (params) => (this.activeCategory = params.category)
-    );
-    this.store.subscribe((data) => {
-      this.productCategories = data.products.productCategories;
-      this.productItems = data.products.productItems.filter(product => product.category === this.activeCategory);
+    this.route.params.subscribe((params) => {
+      this.activeCategory = params.category;
+      this.store.subscribe((data) => {
+        this.productCategories = data.products.productCategories;
+        this.productItems = data.products.productItems.filter(
+          (product) => product.category === this.activeCategory
+        );
+      });
     });
+  }
+  addToCart(productId, quantity) {
+    this.store.dispatch(new AddToCart({ productId, quantity: +quantity }));
   }
 }

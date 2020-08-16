@@ -1,0 +1,41 @@
+<div class="card p-2 mb-3 div small">
+  <div class="row justify-content-between">
+    <!-- <div class="col-auto" (click)="toggleCollapedstate()">Togle</div> -->
+    <div class="col-auto" (click)="isCollapsed = !isCollapsed"><button class="btn">{{ isCollapsed ? "Show Full" : "Show Less"}}</button></div>
+    <div class="col-auto"><fa (click)="moveToNextStep()" name="angle-right" size="lg" class="nav-icons"></fa></div>
+  </div>
+  <div [ngbCollapse]="isCollapsed">
+    <div class="row mb-2">
+      <div class="col">
+        <div class="text-muted">Order Id</div>
+        <div>
+          {{ order.orderId }}
+        </div>
+      </div>
+      <div class="col">
+        <div class="text-muted">Order Time</div>
+        <div>
+          {{ order.date | date }}
+        </div>
+      </div>
+    </div>
+    <div class="mb-2">
+      <div class="text-muted">Customer</div>
+      <div>{{ order.customerName }} ~ {{ order.customerPhone }}</div>
+    </div>
+    <div class="mb-2">
+      <div class="text-muted">Deliver To</div>
+      <div>
+        {{ order.customerAddress }}
+      </div>
+    </div>
+  </div>
+  <div class="text-muted">Items:</div>
+  <div *ngFor="let item of order.items">
+    <app-admin-active-order-card-item [item]="item">
+    </app-admin-active-order-card-item>
+  </div>
+  <div class="p-1">
+      Total Bill: &#8377;{{getTotalPrice(order.items)}}
+  </div>
+</div>

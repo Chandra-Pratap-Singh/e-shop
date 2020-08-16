@@ -1,0 +1,6 @@
+
+<ngb-rating [(rate)]="currentRate" [readonly]="readOnly" max="5">
+  <ng-template let-fill="fill" let-index="index">
+    <span class="star" [class.filled]="fill === 100" [class.bad]="currentRate <= 2">&#9733;</span>
+  </ng-template>
+</ngb-rating>

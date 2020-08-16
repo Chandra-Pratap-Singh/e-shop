@@ -1,3 +1,20 @@
+
 .pointer-cursor{
     cursor: pointer;
 }
+body{
+    /* background-color: #F7FAFC !important; */
+  background-color: #e5e5e5 !important;
+}
+.active{
+    background-color: aquamarine !important;
+}
+.nav-icons{
+    font-size: 24px;
+}
+.product-mini-image{
+    height: 70px;
+    width: 70px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
