@@ -1,0 +1,23 @@
+<div class="m-0 p-0">
+  <div *ngFor="let product of products | async">
+    <div
+      class="row bg-white border p-2 m-0"
+      [routerLink]="['/admin', 'edit-product', product.productId]"
+    >
+      <div class="col-auto">
+        <img [src]="product.img" width="70px" height="70px" />
+      </div>
+      <div class="col">
+        <div>
+          <strong>{{ product.productName }}</strong>
+        </div>
+        <div class="text-muted">{{ product.description }}</div>
+      </div>
+      <div class="col">
+        <span class="text-muted">Categories: </span>
+        <span *ngFor="let category of product.category"> {{ category }}, </span>
+      </div>
+      <div class="col-auto">&#8377; {{ product.price }}</div>
+    </div>
+  </div>
+</div>

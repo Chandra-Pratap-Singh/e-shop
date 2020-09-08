@@ -1,0 +1,56 @@
+<div class="card shadow" style="width: 18rem;">
+  <img [src]="product.img" height="200px" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <div class="row">
+      <div class="col-8">
+        <h5 class="card-title m-0 p-0">{{ product.name }}</h5>
+      </div>
+      <div class="col-4">
+        <strong> &#8377;{{ product.price }}</strong>
+      </div>
+    </div>
+
+    <div class="card-text">
+      <app-ratings></app-ratings>
+      {{ product.ratingProvider }}
+      <div class="text-muted">
+        {{ product.description }}
+      </div>
+    </div>
+    <br />
+    <button
+      *ngIf="product.presentInCart === 0; else addedQuantity"
+      (click)="add(1)"
+      class="btn btn-success w-100"
+    >
+      ADD
+    </button>
+    <ng-template #addedQuantity>
+      <div class="row">
+        <div class="col-3">
+          <button
+            class="btn btn-danger"
+            (click)="add(+product.presentInCart - 1)"
+          >
+            -
+          </button>
+        </div>
+        <div
+          class="col-6 bg-secondary text-white text-center lead p-1 d-flex align-items-center justify-content-center font-weight-bold"
+        >
+          {{ product.presentInCart }} &nbsp;<span class="font-weight-light"
+            >&#8377;{{ product.presentInCart * product.price }}
+          </span>
+        </div>
+        <div class="col-3">
+          <button
+            class="btn btn-success"
+            (click)="add(+product.presentInCart + 1)"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

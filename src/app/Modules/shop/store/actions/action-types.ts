@@ -1,0 +1,2 @@
+export const ADD_TO_CART:string = 'ADD_TO_CART';
+export const UPDATE_ACTIVE_ADDRESS = 'UPDATE_ACTIVE_ADDRESS';

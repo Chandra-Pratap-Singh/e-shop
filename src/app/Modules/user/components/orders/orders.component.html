@@ -1,0 +1,40 @@
+<div class="p-3">
+  <p>
+    Orders:
+  </p>
+  <div class="bg-white p-0 my-4 border" *ngFor="let order of orders | async">
+    <div class="row m-0 p-2 bg-light">
+      <div class="col"><span class="text-muted">Order Id: </span>{{ order.orderId }}</div>
+      <div class="col"><span class="text-muted">Date: </span>{{ order.date | date }}</div>
+      <div class="col"><span class="text-muted">Status: </span>{{ order.status }}</div>
+    </div>
+    <div
+      class="row m-2 border-bottom p-2"
+      *ngFor="let orderItem of order.orderItems"
+    >
+      <div class="col-auto">
+        <img [src]="orderItem.img" class="product-mini-image" />
+      </div>
+      <div class="col">
+        <strong> {{ orderItem.productName }} </strong>
+        <div>&#8377;{{ orderItem.price }}</div>
+        <div>{{ orderItem.description }}</div>
+      </div>
+      <div class="col-auto">
+        &#8377;{{orderItem.price * orderItem.quantity}}
+      </div>
+      <div class="col-auto">
+        <div>Rate your Purchase</div>
+        <div>
+          <!-- <app-ratings
+            [currentRate]="orderItem.rating"
+            [readOnly]="false"
+          ></app-ratings> -->
+        </div>
+      </div>
+    </div>
+    <div class="p-3">
+      <strong>Total: &#8377;{{getTotalAmount(order.orderItems)}}</strong>
+    </div>
+  </div>
+</div>
